@@ -1,0 +1,27 @@
+{
+  "author": {
+    "name": "squalle0nhart"
+  },
+  "bugs": {
+    "url": "https://github.com/squalle0nhart/electron-pdf-viewer/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "use pdf.js preview pdf file in electron",
+  "homepage": "https://github.com/squalle0nhart/electron-pdf-viewer",
+  "keywords": [
+    "pdf.js",
+    "electron"
+  ],
+  "license": "Apache 2.0",
+  "main": "index.js",
+  "name": "electron-pdf-viewer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squalle0nhart/electron-pdf-viewer.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.1"
+}

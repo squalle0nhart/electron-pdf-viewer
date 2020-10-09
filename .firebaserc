@@ -1,0 +1,6 @@
+{
+  "projects": {
+    " ": "electron-pdf-viewer",
+    "default": "electron-pdf-viewer"
+  }
+}
