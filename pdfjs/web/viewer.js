@@ -10689,7 +10689,9 @@ class PDFPageView {
       annotationCanvasMap: this._annotationCanvasMap,
       pageColors: this.pageColors
     };
-    const renderTask = this.pdfPage.render(renderContext);
+    let renderTask = this.pdfPage.render(renderContext);
+    const pdfPage = this.pdfPage;
+
     renderTask.onContinue = function (cont) {
       showCanvas();
       if (result.onRenderContinue) {
@@ -10699,8 +10701,20 @@ class PDFPageView {
       }
     };
     renderTask.promise.then(function () {
-      showCanvas();
-      renderCapability.resolve();
+      renderTask = pdfPage.render(renderContext);
+      renderTask.promise.then(function () {
+        renderTask = pdfPage.render(renderContext);
+        renderTask.promise.then(function () {
+          renderTask = pdfPage.render(renderContext);
+          renderTask.promise.then(function () {
+            renderTask = pdfPage.render(renderContext);
+            renderTask.promise.then(function () {
+              showCanvas();
+              renderCapability.resolve();
+            });
+          });
+        });
+      });
     }, function (error) {
       if (!(error instanceof _pdfjsLib.RenderingCancelledException)) {
         showCanvas();
